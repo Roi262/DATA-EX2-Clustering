@@ -57,10 +57,37 @@ plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1, s=25, edgecolor='k')
 # (e) The first letter of your first names (so the data should 
 # look like a noisy version of “NDH”, for your own letters; 
 # if they are the same letter, use last names. :) ).
-#plt.subplot(337)
-#plt.title("e - data in form of letters TRM", fontsize='small')
-#X1, Y1 = load_sample_images()
-#plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1, s=25, edgecolor='k')
+plt.subplot(337)
+plt.title("e - data in form of letters TRM", fontsize='small')
+
+# draw the T
+
+mu_T_1 = [0, 0]
+sigma_T_1 = np.array([[0, 5],
+                  [.05, 0]])
+x, y = np.random.multivariate_normal(mu_T_1, sigma_T_1, 20).T
+plt.scatter(x, y)
+
+mu_T_2 = [0, 5]
+sigma_T_2 = np.array([[0, .05],
+                      [3, 0]])
+x2, y2 = np.random.multivariate_normal(mu_T_2, sigma_T_2, 20).T
+plt.scatter(x2, y2)
+
+# draw the R
+
+mu_R_1 = [4, 0]
+sigma_R_1 = np.array([[0, 5],
+                  [.05, 0]])
+x3, y3 = np.random.multivariate_normal(mu_R_1, sigma_R_1, 20).T
+plt.scatter(x3, y3)
+
+mu_R_2 = [5, 5]
+sigma_R_2 = np.array([[0, .05],
+                      [2, 0]])
+x4, y4 = np.random.multivariate_normal(mu_R_2, sigma_R_2, 20).T
+plt.scatter(x4, y4)
+
 
 """
 plt.subplot(337)
